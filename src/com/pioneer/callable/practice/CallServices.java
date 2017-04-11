@@ -11,7 +11,7 @@ import java.util.concurrent.Future;
 
 public class CallServices {
 
-//	private Map<String, Callable<String>> listOfServices;
+	// private Map<String, Callable<String>> listOfServices;
 	private Set<Callable<String>> setOfServices;
 	private List<Future<String>> getValuesFromServices;
 
@@ -37,19 +37,17 @@ public class CallServices {
 	public void implService() {
 		try {
 			getValuesFromServices = executor.invokeAll(appendServices());
-			
+
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-	public void valuesFromServices(){
-		for(Future<String> future: getValuesFromServices){
+	public void valuesFromServices() {
+		for (Future<String> future : getValuesFromServices) {
 			try {
 				System.out.println(future.get());
 			} catch (InterruptedException | ExecutionException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

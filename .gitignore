@@ -1,0 +1,8 @@
+/bin/
+
+!/src/callable
+/src/**
+/JavaCertificationPractice/
+/designpatterns/
+/files/
+/test/
